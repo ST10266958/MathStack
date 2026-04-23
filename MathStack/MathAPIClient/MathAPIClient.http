@@ -1,0 +1,6 @@
+@MathAPIClient_HostAddress = http://localhost:5163
+
+GET {{MathAPIClient_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
