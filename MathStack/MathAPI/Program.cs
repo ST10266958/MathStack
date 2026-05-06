@@ -42,7 +42,10 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 
-app.UseHttpsRedirection();
+if (!appEnvironment.IsDevelopment()){
+
+    app.HttpsRedirection();
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
