@@ -94,7 +94,7 @@ jobs:
       - name: Wait for database
         run: |
           for i in {1..36}; do
-            if docker exec math-db /bin/bash -c "sqlcmd -S localhost -U sa -P 'Cuccimaster#12' -C -Q 'SELECT 1'" >/dev/null 2>&1; then
+            if docker exec math-db /bin/bash -c "sqlcmd -S localhost -U sa -P '$SA_PASSWORD' -C -Q 'SELECT 1'" >/dev/null 2>&1; then
               echo "Database is ready"
               exit 0
             fi
